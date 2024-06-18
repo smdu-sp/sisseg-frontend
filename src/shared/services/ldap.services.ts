@@ -11,9 +11,9 @@ async function Logout() {
 
 const baseURL = process.env.API_URL || 'http://localhost:3000/';
 
-async function getUsers() {
+async function usuariosDesativados() {
     const session = await getServerSession(authOptions);
-    const usuarios = await fetch(`${baseURL}ldap/users`, {
+    const usuarios = await fetch(`${baseURL}ldap/desativados`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -28,4 +28,21 @@ async function getUsers() {
     return usuarios;
 }
 
-export { getUsers }
+async function buscaUsuariosInativos() {
+    const session = await getServerSession(authOptions);
+    const usuarios = await fetch(`${baseURL}ldap/inativos`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${session?.access_token}`
+        }
+    }).then((response) => {
+        const result = response.json();
+        console.log(result);
+        if (response.status === 401) Logout();
+        return result;
+    })
+    return usuarios;
+}
+
+export { usuariosDesativados, buscaUsuariosInativos }

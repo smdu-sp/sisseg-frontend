@@ -30,10 +30,23 @@ export const menu: IMenu = {
             icon: Person,
         },
         {
-            title: 'Usuários Desativados',
+            title: 'Usuários de rede desativados',
             href: '/desativados',
             name: 'desativados',
             icon: Person,
-        }             
+        },
+        {
+            title: 'Usuários de rede inativos',
+            href: '/inativos',
+            name: 'inativos',
+            icon: Person,
+        },
+        {
+            title: 'Empresas',
+            href: '/empresas',
+            name: 'empresas',
+            icon: Person,
+        },
+
     ]
 }

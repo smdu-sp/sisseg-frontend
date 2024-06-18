@@ -4,7 +4,7 @@ import Table from "@mui/joy/Table";
 import Box from "@mui/joy/Box";
 
 export default async function Desativados() {
-  const Usuarios = await ldapServices.usuariosDesativados();
+  const Usuarios = await ldapServices.getUsers();
   return (
     <Content>
       <Box>        

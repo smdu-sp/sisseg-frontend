@@ -3,8 +3,8 @@ import Content from "@/components/Content";
 import Table from "@mui/joy/Table";
 import Box from "@mui/joy/Box";
 
-export default async function Desativados() {
-  const Usuarios = await ldapServices.usuariosDesativados();
+export default async function Inativos() {
+  const Usuarios = await ldapServices.buscaUsuariosInativos();
   return (
     <Content>
       <Box>        
