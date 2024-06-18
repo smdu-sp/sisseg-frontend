@@ -28,9 +28,10 @@ async function usuariosDesativados() {
     return usuarios;
 }
 
-async function buscaUsuariosInativos() {
+async function buscaUsuariosInativos(dias?: number) {
+    if (!dias) dias = 30;
     const session = await getServerSession(authOptions);
-    const usuarios = await fetch(`${baseURL}ldap/inativos`, {
+    const usuarios = await fetch(`${baseURL}ldap/inativos?dias=${dias}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -38,7 +39,6 @@ async function buscaUsuariosInativos() {
         }
     }).then((response) => {
         const result = response.json();
-        console.log(result);
         if (response.status === 401) Logout();
         return result;
     })
