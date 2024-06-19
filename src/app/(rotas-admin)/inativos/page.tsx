@@ -27,6 +27,7 @@ export default function Inativos() {
             <Option value={10}>10 dias</Option>
             <Option value={20}>15 dias</Option>
             <Option value={30}>30 dias</Option>
+            <Option value={45}>45 dias</Option>
             <Option value={60}>60 dias</Option>
             <Option value={90}>90 dias</Option>
           </Select>
@@ -46,9 +47,9 @@ export default function Inativos() {
             {!loading ?
               usuarios && usuarios.length > 0 ? usuarios.map((usuario) => (
                 <tr key={usuario.usuario}>
-                  <td>{usuario.nome}</td>
-                  <td>{usuario.mail}</td>
+                  <td>{usuario.nome}</td>                  
                   <td>{usuario.usuario}</td>
+                  <td>{usuario.mail}</td>
                   <td>{(new Date(usuario.timestamp*1000)).toLocaleDateString()}</td>
                 </tr>
               )) : <tr>
