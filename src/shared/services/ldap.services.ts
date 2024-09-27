@@ -45,4 +45,21 @@ async function buscaUsuariosInativos(dias?: number) {
     return usuarios;
 }
 
-export { usuariosDesativados, buscaUsuariosInativos }
+async function buscaPastas() {
+    const session = await getServerSession(authOptions);
+    const pastas = await fetch(`${baseURL}ldap/pastas`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${session?.access_token}`
+        }
+    }).then((response) => {
+        const result = response.json();
+        console.log(result);
+        if (response.status === 401) Logout();
+        return result;
+    })
+    return pastas;
+}
+
+export { usuariosDesativados, buscaUsuariosInativos, buscaPastas }
