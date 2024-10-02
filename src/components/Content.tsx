@@ -9,7 +9,7 @@ import { IMenu } from '@/app/menu';
 
 export default function Content({
     children,
-    titulo = 'Usuários desativados',
+    titulo,
     tags = [],
     button = null,
     pagina,

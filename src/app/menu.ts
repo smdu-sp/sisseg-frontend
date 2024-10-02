@@ -42,9 +42,9 @@ export const menu: IMenu = {
             icon: Person,
         },
         {
-            title: 'Empresas',
-            href: '/empresas',
-            name: 'empresas',
+            title: 'Exonerados',
+            href: '/exonerados',
+            name: 'exonerados',
             icon: Person,
         },
 

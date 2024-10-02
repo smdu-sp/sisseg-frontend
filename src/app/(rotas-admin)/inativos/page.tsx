@@ -19,7 +19,7 @@ export default function Inativos() {
     })
   }, [dias])
   return (
-    <Content>
+    <Content titulo='Usuários Inativos'>
       <Box>
         <FormControl>
           <FormLabel>Dias sem acesso</FormLabel>

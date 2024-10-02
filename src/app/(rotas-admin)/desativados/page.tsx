@@ -6,7 +6,7 @@ import Box from "@mui/joy/Box";
 export default async function Desativados() {
   const Usuarios = await ldapServices.usuariosDesativados();
   return (
-    <Content>
+    <Content titulo="Usários Desativados">
       <Box>        
         <Table borderAxis="both">
           <thead>
